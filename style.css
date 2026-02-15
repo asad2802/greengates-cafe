@@ -1,0 +1,337 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0e0e0e;
+color:white;
+}
+
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 10%;
+background:#111;
+position:sticky;
+top:0;
+z-index:999;
+}
+
+nav h1{ color:#00ffae; }
+
+nav ul{ display:flex; gap:30px; list-style:none; }
+
+nav a{ color:white; text-decoration:none; }
+
+/* HERO */
+/* HERO */
+.hero{
+height:90vh;
+background:url("images/entrance1.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+}
+
+/* dark overlay for readability */
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+}
+
+.hero-text{
+position:relative;
+z-index:1;
+background:rgba(0,0,0,0.5);
+padding:40px;
+border-radius:20px;
+backdrop-filter:blur(6px);
+}
+
+.hero h2{
+font-size:42px;
+color:#00ffae;
+}
+
+.hero button{
+margin-top:20px;
+padding:12px 28px;
+border:none;
+background:#00ffae;
+color:black;
+font-weight:bold;
+border-radius:30px;
+cursor:pointer;
+transition:.3s;
+}
+
+.hero button:hover{
+transform:scale(1.08);
+}
+
+
+/* MENU */
+.section-title{
+text-align:center;
+margin:60px 0 30px;
+font-size:32px;
+color:#00ffae;
+}
+
+.category-tabs{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+padding:20px;
+}
+
+.category-tabs button{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#1c1c1c;
+color:white;
+cursor:pointer;
+}
+
+.category-tabs .active{
+background:#00ffae;
+color:black;
+}
+
+.menu-items{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:40px 10%;
+}
+
+.card{
+background:#1a1a1a;
+padding:20px;
+border-radius:15px;
+transition:.3s;
+}
+
+.card:hover{ transform:scale(1.05); }
+
+.price{ color:#00ffae; margin-top:10px; }
+
+/* ABOUT */
+.about{
+padding:80px 10%;
+text-align:center;
+background:#111;
+}
+
+/* GALLERY */
+#gallery{ padding:80px 10%; }
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.img-box{ position:relative; overflow:hidden; border-radius:20px; }
+
+.img-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.5s;
+}
+
+.img-box:hover img{ transform:scale(1.1); }
+
+.overlay{
+position:absolute;
+bottom:0;
+background:rgba(0,0,0,0.7);
+width:100%;
+padding:15px;
+text-align:center;
+opacity:0;
+transition:0.5s;
+}
+
+.img-box:hover .overlay{ opacity:1; }
+
+/* MAP */
+#map{ padding:70px 10%; text-align:center; }
+
+#map iframe{
+width:100%;
+height:350px;
+border:none;
+border-radius:20px;
+}
+/* RESERVATION */
+#reservation{
+padding:80px 10%;
+background:#111;
+text-align:center;
+}
+
+#bookingForm{
+max-width:600px;
+margin:auto;
+display:grid;
+gap:15px;
+}
+
+#bookingForm input,
+#bookingForm select{
+padding:15px;
+border-radius:10px;
+border:none;
+background:#1a1a1a;
+color:white;
+}
+
+#bookingForm button{
+padding:15px;
+background:#00ffae;
+border:none;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+}
+/* WhatsApp Floating Button */
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+font-size:28px;
+padding:15px 18px;
+border-radius:50%;
+text-decoration:none;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+z-index:999;
+}
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+background:black;
+}
+/* =========================
+   MOBILE RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px){
+
+/* NAVBAR */
+nav{
+flex-direction:column;
+gap:10px;
+text-align:center;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+/* HERO */
+.hero{
+height:80vh;
+padding:20px;
+}
+
+.hero h2{
+font-size:28px;
+}
+
+.hero-text{
+padding:25px;
+}
+
+/* MENU GRID */
+.menu-items{
+grid-template-columns:1fr;
+padding:30px 6%;
+}
+
+/* CATEGORY TABS */
+.category-tabs{
+padding:10px;
+}
+
+/* ABOUT */
+.about{
+padding:60px 6%;
+font-size:15px;
+}
+
+/* GALLERY */
+#gallery{
+padding:60px 6%;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+/* RESERVATION */
+#reservation{
+padding:60px 6%;
+}
+
+#bookingForm{
+gap:12px;
+}
+
+/* MAP */
+#map{
+padding:60px 6%;
+}
+
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 480px){
+
+.hero h2{
+font-size:22px;
+}
+
+.section-title{
+font-size:26px;
+}
+
+nav h1{
+font-size:22px;
+}
+
+.whatsapp{
+bottom:15px;
+right:15px;
+}
+}
