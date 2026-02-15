@@ -30,9 +30,10 @@ nav a{ color:white; text-decoration:none; }
 
 /* HERO */
 /* HERO */
+/* HERO */
 .hero{
 height:90vh;
-background:url("entrance1.jpg")
+background:url("entrance1.jpg") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -335,4 +336,5 @@ bottom:15px;
 right:15px;
 }
 }
+
 
